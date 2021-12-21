@@ -1,0 +1,4 @@
+lane :test do
+  increment_bundle_version(info_plist: "Info.plist")
+  increment_version_code(manifest: "AndroidManifest.xml")
+end
