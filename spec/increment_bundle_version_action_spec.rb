@@ -24,7 +24,7 @@ describe Fastlane::Actions::IncrementVersionCodeAction do
     it "increment bundle version for specified Info.plist." do
       expect(Fastlane::UI).to receive(:success).with("Success - Increment bundle version #{plist} from 1 to 2!")
       Fastlane::Actions::IncrementBundleVersionAction.run(
-        plist: "#{plist}",
+        info_plist: "#{plist}",
         )
       result = File.read(File.join(test_path, plist_file))
       expect(result).to include("<key>CFBundleVersion</key>")

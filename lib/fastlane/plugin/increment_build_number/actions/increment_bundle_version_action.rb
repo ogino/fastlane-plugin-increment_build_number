@@ -5,13 +5,13 @@ module Fastlane
   module Actions
     class IncrementBundleVersionAction < Action
       def self.run(params)
-        ver_code = Fastlane::Actions::GetInfoPlistValueAction.run(path: params[:plist], key: "CFBundleVersion")
+        ver_code = Fastlane::Actions::GetInfoPlistValueAction.run(path: params[:info_plist], key: "CFBundleVersion")
         new_ver = self.number?(ver_code).nil? ? nil : ver_code.to_i + 1
         if new_ver.nil?
-          UI.user_error!("Failure - Increment bundle version #{params[:plist]} from #{ver_code} to #{new_ver}.")
+          UI.user_error!("Failure - Increment bundle version #{params[:info_plist]} from #{ver_code} to #{new_ver}.")
         else
-          Fastlane::Actions::SetInfoPlistValueAction.run(path: params[:plist], key: "CFBundleVersion", value: new_ver.to_s)
-          UI.success("Success - Increment bundle version #{params[:plist]} from #{ver_code} to #{new_ver}!")
+          Fastlane::Actions::SetInfoPlistValueAction.run(path: params[:info_plist], key: "CFBundleVersion", value: new_ver.to_s)
+          UI.success("Success - Increment bundle version #{params[:info_plist]} from #{ver_code} to #{new_ver}!")
         end
       end
 
