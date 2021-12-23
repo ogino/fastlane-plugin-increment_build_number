@@ -66,7 +66,7 @@ module Fastlane
                                        skip_type_validation: true),
           FastlaneCore::ConfigItem.new(key: :version_code,
                                        env_name: "FL_INCREMENT_BUILD_NUMBER_VERSION_CODE",
-                                       description: "Change to a specific version code.",
+                                       description: "Change to a specific version code",
                                        optional: true,
                                        skip_type_validation: true),
           FastlaneCore::ConfigItem.new(key: :auto_increment,

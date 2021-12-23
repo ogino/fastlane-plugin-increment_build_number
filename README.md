@@ -22,12 +22,12 @@ Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plu
 
 [For Android]
 ```ruby
-increment_version_code(manifest: "AndroidManifest.xml")
+increment_version_code(manifest: "AndroidManifest.xml", version_name: "1.0", version_code: "1", auto_increment: true)
 ```
 
 [For iOS]
 ```ruby
-increment_bundle_version(info_plist: "Info.plist")
+increment_bundle_version(info_plist: "Info.plist", version_number: "1.0", build_number: "1", auto_increment: true)
 ```
 
 **Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
